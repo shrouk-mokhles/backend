@@ -16,6 +16,7 @@ export const API_ENDPOINTS = {
     LOGIN: {
       INITIATE_LOGIN: `${BASE_URL}/auth/initiate-login`,
       COMPLETE_LOGIN: `${BASE_URL}/auth/complete-login`,
+      RESEND_CODE_LOGIN: `${BASE_URL}/users/resend_verification_code`,
     },
   },
 };
