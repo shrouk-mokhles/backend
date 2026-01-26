@@ -5,6 +5,10 @@ export async function initiateLogin(request, { email, password }) {
     const response = await request.post(
       API_ENDPOINTS.AUTH.LOGIN.INITIATE_LOGIN,
       {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
         data: {
           email: email,
           password: password,
