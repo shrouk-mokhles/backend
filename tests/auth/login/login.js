@@ -48,26 +48,3 @@ export async function completeLogin(request, { email, code }) {
     throw error;
   }
 }
-
-export async function resendOTP(request, { email, code }) {
-  try {
-    const response = await request.post(
-      API_ENDPOINTS.AUTH.LOGIN.RESEND_CODE_LOGIN,
-      {
-        data: {
-          email,
-          verification_code: code,
-        },
-      },
-    );
-    const body = await response.json();
-    return {
-      status: response.status(),
-      ok: response.ok(),
-      data: body.data,
-    };
-  } catch (error) {
-    console.log(`Error Occured: ${error}`);
-    throw error;
-  }
-}

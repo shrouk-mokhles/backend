@@ -6,18 +6,11 @@ export const USERS = {
   },
 };
 
-import dotenv from "dotenv";
-dotenv.config();
-
-const BASE_URL = process.env.API_BASE_URL;
-
 export const API_ENDPOINTS = {
   AUTH: {
     LOGIN: {
-      INITIATE_LOGIN: `${BASE_URL}/auth/initiate-login`,
-      COMPLETE_LOGIN: `${BASE_URL}/auth/complete-login`,
-      RESEND_CODE_LOGIN: `${BASE_URL}/users/resend_verification_code`,
+      INITIATE_LOGIN: "auth/initiate-login",
+      COMPLETE_LOGIN: "auth/complete-login",
     },
   },
 };
-
