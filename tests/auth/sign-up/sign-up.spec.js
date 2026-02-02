@@ -29,8 +29,8 @@ test.describe.serial("[Sign Up API]", () => {
 
   test("signup WITH wrong email", async ({ request }) => {
     const signupResponse = await signup(request, {
-      name:USERS.VALID_NAME,
-      email: USERS.INVALID.EMAIL,
+      name: USERS.VALID_NAME,
+      email: "shrouk.com",
       password: USERS.PASSWORDS.VALID_PASSWORD,
       passwordConfirmation: USERS.PASSWORDS.VALID_PASSWORD,
     });
@@ -41,7 +41,7 @@ test.describe.serial("[Sign Up API]", () => {
   test("SIGNUP WITH INVALID PASSWORD", async ({ request }) => {
     const signupResponse = await signup(request, {
       name: USERS.VALID_NAME,
-      email: USERS.INVALID.EMAIL,
+      email: "shrouk.com",
       password: USERS.INVALID.PASSWORD,
       passwordConfirmation: USERS.INVALID.PASSWORD,
     });
