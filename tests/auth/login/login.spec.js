@@ -60,3 +60,4 @@ test.describe.serial("[Login API]", () => {
     expect(completeLoginResponse.status).toBe(422);
   });
 });
+
