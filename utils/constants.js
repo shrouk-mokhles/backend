@@ -21,13 +21,17 @@ export const API_ENDPOINTS = {
   AUTH: {
     LOGIN: {
       INITIATE_LOGIN: "auth/initiate-login",
-      COMPLETE_LOGIN: "auth/complete-login"
+      COMPLETE_LOGIN: "auth/complete-login",
     },
     SIGNUP: {
-      REGISTER:"auth/register",
+      REGISTER: "auth/register",
       VERIFY_EMAIL: "users/verify_mail",
+    },
+    RESET_PASSWORD: {
+      REQUEST_RESET_PASSWORD: "auth/request-reset-password",
+      CHECK_RESET_PASSWORD_CODE: "auth/check-reset-password-code",
+      RESET_PASSWORD: "auth/reset-password",
     },
   },
 };
-
 
