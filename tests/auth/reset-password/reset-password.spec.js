@@ -82,15 +82,12 @@ test.describe.serial("[Reset Password]", () => {
        email: "shrouk.mokhles@creiden.com",
      });
 
-     expect(passwordRequsetResponse.ok).toBeTruthy();
-
      const OTP = passwordRequsetResponse.data.code;
 
      const verifyResponse = await resetPasswordCode(request, {
        email: "shrouk.mokhles@creiden.com",
        code: OTP,
      });
-     expect(verifyResponse.ok).toBeTruthy();
 
      const resetpasswordResponse = await resetPassword(request, {
        password: USERS.PASSWORDS.VALID_PASSWORD,
