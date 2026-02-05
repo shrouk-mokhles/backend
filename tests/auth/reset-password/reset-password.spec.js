@@ -75,4 +75,28 @@ test.describe.serial("[Reset Password]", () => {
 
      expect(verifyResponse.status).toBe(422);
    });
+  
+   test("The password confirmation does not match", async ({request,
+   }) => {
+     const passwordRequsetResponse = await resetPasswordRequest(request, {
+       email: "shrouk.mokhles@creiden.com",
+     });
+
+     expect(passwordRequsetResponse.ok).toBeTruthy();
+
+     const OTP = passwordRequsetResponse.data.code;
+
+     const verifyResponse = await resetPasswordCode(request, {
+       email: "shrouk.mokhles@creiden.com",
+       code: OTP,
+     });
+     expect(verifyResponse.ok).toBeTruthy();
+
+     const resetpasswordResponse = await resetPassword(request, {
+       password: USERS.PASSWORDS.VALID_PASSWORD,
+       passwordconfirmation: "Wlcome2creiden***",
+       code: OTP,
+     });
+     expect(resetpasswordResponse.status).toBe(422);
+   });
 });
